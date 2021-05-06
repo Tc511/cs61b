@@ -82,7 +82,13 @@ public class IntList {
 
     public static IntList dcatenate(IntList A, IntList B) {
         //TODO:  fill in method
-        return null;
+        IntList L0 ;
+        L0 = A;
+        while(L0.rest != null){
+            L0 = L0.rest;
+        }
+        L0.rest = B;
+        return A;
     }
 
     /**
@@ -91,7 +97,27 @@ public class IntList {
      */
     public static IntList catenate(IntList A, IntList B) {
         //TODO:  fill in method
-        return null;
+
+        IntList L0;
+        L0 = B;
+        IntList L1;
+        L1 = A;
+        int i = 0;
+        while(L1 != null){    //获得链表的长度
+            L1 = L1.rest;
+            i++;
+        }
+        int k,j;
+        for(k = i;k>0;k--){
+            j =k;
+            L1 = A;
+            while(j>1){
+                L1 = L1.rest;
+                j--;
+            }
+            L0 = new IntList(L1.first,L0);
+        }
+        return L0;
     }
 
 
